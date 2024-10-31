@@ -10,6 +10,10 @@ android {
     defaultConfig {
         applicationId = "com.guodong.uniappx.playground"
         minSdk = 21
+
+        // https://doc.dcloud.net.cn/uni-app-x/native/debug/android.html
+        // 当build.gradle中的targetSdk为34时，在安卓14设备上资源同步会失败。建议将targetSdk调整到30至33之间。
+        //noinspection ExpiredTargetSdkVersion
         targetSdk = 32
 
         // region 版本号应该与uni-app x应用一致
@@ -76,16 +80,15 @@ dependencies {
 
     // for custom playground
     implementation(fileTree(mapOf("include" to listOf("*.aar"), "dir" to "../libs")))
-    implementation("androidx.core:core-ktx:1.8.0")
-    implementation("androidx.recyclerview:recyclerview:1.0.0")
+    implementation("androidx.core:core-ktx:1.10.1")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.appcompat:appcompat:1.0.0")
     implementation("androidx.exifinterface:exifinterface:1.3.6")
     implementation("androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.viewpager2:viewpager2:1.1.0-beta02")
-    implementation("androidx.annotation:annotation:1.1.0")
-    implementation("androidx.core:core:1.1.0")
+    implementation("androidx.webkit:webkit:1.6.0")
     implementation("com.google.android.material:material:1.4.0")
+    implementation("androidx.viewpager2:viewpager2:1.1.0-beta02")
     implementation("com.alibaba:fastjson:1.2.83")
     implementation("com.facebook.fresco:fresco:3.1.3")
     implementation("com.facebook.fresco:middleware:3.1.3")
@@ -99,7 +102,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.10")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
     implementation("com.squareup.okhttp3:okhttp:3.12.12")
-    implementation("com.github.getActivity:XXPermissions:18.0")
+    implementation("com.github.getActivity:XXPermissions:18.63")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

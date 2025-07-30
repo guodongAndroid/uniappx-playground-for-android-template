@@ -104,6 +104,9 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:3.12.12")
     implementation("com.github.getActivity:XXPermissions:18.63")
 
+    // adapt 4.75
+    implementation("net.lingala.zip4j:zip4j:2.11.5")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

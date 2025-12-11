@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -67,6 +69,12 @@ android {
         jvmTarget = "1.8"
     }
 
+    kotlin {
+        compilerOptions {
+            jvmTarget = JvmTarget.JVM_1_8
+        }
+    }
+
     androidResources {
         additionalParameters += "--auto-add-overlay"
         ignoreAssetsPattern = "!.svn:!.git:.*:!CVS:!thumbs.db:!picasa.ini:!*.scc:*~"
@@ -90,22 +98,25 @@ dependencies {
     implementation("com.google.android.material:material:1.4.0")
     implementation("androidx.viewpager2:viewpager2:1.1.0-beta02")
     implementation("com.alibaba:fastjson:1.2.83")
-    implementation("com.facebook.fresco:fresco:3.1.3")
-    implementation("com.facebook.fresco:middleware:3.1.3")
-    implementation("com.facebook.fresco:animated-gif:3.1.3")
-    implementation("com.facebook.fresco:webpsupport:3.1.3")
-    implementation("com.facebook.fresco:animated-webp:3.1.3")
+    implementation("com.facebook.fresco:fresco:3.4.0")
+    implementation("com.facebook.fresco:middleware:3.4.0")
+    implementation("com.facebook.fresco:animated-gif:3.4.0")
+    implementation("com.facebook.fresco:webpsupport:3.4.0")
+    implementation("com.facebook.fresco:animated-webp:3.4.0")
+    implementation("com.caverock:androidsvg:1.4")
     implementation("com.github.bumptech.glide:glide:4.9.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.10")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.10")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.2.0")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:2.2.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
     implementation("com.squareup.okhttp3:okhttp:3.12.12")
     implementation("com.github.getActivity:XXPermissions:18.63")
 
     // adapt 4.75
     implementation("net.lingala.zip4j:zip4j:2.11.5")
+
+    implementation("com.squareup.leakcanary:leakcanary-android:2.14")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
